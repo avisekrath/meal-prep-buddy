@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from './ui/Button';
 import { navItems } from '../data/mealData';
+import logo from '../assets/logo.png';
 import './Nav.css';
 
 export function Nav({ isDark, toggleDark }) {
@@ -49,7 +50,7 @@ export function Nav({ isDark, toggleDark }) {
     <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
       <div className="nav-container container">
         <a href="#" className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <img src="/src/assets/logo.png" alt="MealPrepBuddy" className="logo-image" />
+          <img src={logo} alt="MealPrepBuddy" className="logo-image" />
         </a>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'nav-links-open' : ''}`}>
