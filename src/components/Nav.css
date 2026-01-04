@@ -34,9 +34,9 @@
 }
 
 .logo-image {
-  height: 52px;
+  height: 64px;
   width: auto;
-  max-width: 220px;
+  max-width: 280px;
   object-fit: contain;
 }
 
@@ -130,7 +130,7 @@
 
 @media (max-width: 480px) {
   .logo-image {
-    height: 40px;
-    max-width: 160px;
+    height: 48px;
+    max-width: 200px;
   }
 }
