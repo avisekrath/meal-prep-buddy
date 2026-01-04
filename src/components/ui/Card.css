@@ -1,0 +1,108 @@
+.card {
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-divider);
+  box-shadow: none;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+/* Padding variants */
+.card-padding-none {
+  padding: 0;
+}
+
+.card-padding-sm {
+  padding: var(--space-md);
+}
+
+.card-padding-md {
+  padding: var(--space-lg);
+}
+
+.card-padding-lg {
+  padding: var(--space-xl);
+}
+
+.card-padding-xl {
+  padding: var(--space-2xl);
+}
+
+/* Hover effect */
+.card-hover:hover {
+  border-color: var(--color-text-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Clickable */
+.card-clickable {
+  cursor: pointer;
+}
+
+/* Variants */
+.card-default {
+  background-color: var(--color-bg-white);
+}
+
+.card-cream {
+  background-color: var(--color-bg-light);
+}
+
+.card-dark {
+  background-color: #2D2A28;
+  color: #F5F0EB;
+}
+
+.card-primary {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.card-accent {
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary);
+}
+
+.card-outline {
+  background-color: transparent;
+  border-color: var(--color-divider);
+}
+
+.card-outline:hover {
+  border-color: var(--color-text-muted);
+}
+
+/* Card sections */
+.card-header {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: var(--space-md);
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card-footer {
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: var(--space-md);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .card {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .card-default {
+  background-color: #3a3735;
+}
+
+[data-theme="dark"] .card-cream {
+  background-color: #2D2A28;
+}
+
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .card-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}

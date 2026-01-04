@@ -1,0 +1,240 @@
+.weekly {
+  background-color: #2D2A28;
+  color: #F5F0EB;
+}
+
+.weekly-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.weekly-header h2 {
+  margin: var(--space-md) 0;
+  color: #F5F0EB;
+}
+
+.weekly-header .text-large {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-lg);
+}
+
+.weekly-mascot {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.day-card-wrapper {
+  opacity: 1;
+}
+
+.day-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-card-content {
+  flex: 1;
+  padding-bottom: var(--space-md);
+}
+
+.day-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-lg);
+  gap: var(--space-sm);
+}
+
+.day-title-group {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.day-emoji {
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.day-name {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.day-tagline {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.day-macros {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.day-meals {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.day-meal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--color-bg-light);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.day-meal-item:hover {
+  background: var(--color-primary-light);
+}
+
+.meal-emoji {
+  font-size: var(--text-lg);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.meal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.meal-name {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-dark);
+}
+
+.meal-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.day-card-actions {
+  display: flex;
+  gap: var(--space-xs);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  justify-content: center;
+}
+
+/* Dark mode card adjustments */
+[data-theme="dark"] .day-meal-item {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .day-meal-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .day-card-actions {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 900px) {
+  .weekly-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .weekly-mascot img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) {
+  .weekly-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .day-card.card {
+    padding: var(--space-md);
+  }
+
+  .day-card-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .day-macros {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .day-name {
+    font-size: var(--text-base);
+  }
+
+  .day-card-content {
+    padding-bottom: var(--space-sm);
+  }
+
+  .day-meals {
+    gap: var(--space-xs);
+  }
+
+  .day-meal-item {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .meal-emoji {
+    font-size: var(--text-base);
+  }
+
+  .meal-name {
+    font-size: var(--text-xs);
+  }
+
+  .meal-desc {
+    font-size: 10px;
+  }
+
+  .day-card-actions {
+    padding-top: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  /* Icon-only buttons on mobile */
+  .day-card-actions .btn-text {
+    display: none;
+  }
+
+  .day-card-actions .btn {
+    padding: var(--space-xs);
+  }
+
+  .weekly-mascot img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}

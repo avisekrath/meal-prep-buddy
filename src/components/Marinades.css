@@ -1,0 +1,92 @@
+.marinades-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.marinades-header h2 {
+  margin: var(--space-md) 0;
+}
+
+.marinades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.marinade-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.marinade-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--accent-color, var(--color-primary));
+}
+
+.marinade-name {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-sm);
+}
+
+.marinade-ingredients {
+  margin-bottom: var(--space-lg);
+}
+
+.marinade-ingredients li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.marinade-ingredients li::before {
+  content: '•';
+  color: var(--accent-color, var(--color-primary));
+  font-weight: bold;
+}
+
+.marinade-ingredients li:last-child {
+  border-bottom: none;
+}
+
+.marinades-tip {
+  text-align: center;
+  margin-top: var(--space-3xl);
+  padding: var(--space-lg);
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-lg);
+}
+
+.marinades-tip p {
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+}
+
+.marinades-tip strong {
+  color: var(--color-accent);
+}
+
+/* Dark mode */
+[data-theme="dark"] .marinade-ingredients li {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .marinades-tip {
+  background-color: rgba(196, 169, 160, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .marinades-grid {
+    grid-template-columns: 1fr;
+  }
+}

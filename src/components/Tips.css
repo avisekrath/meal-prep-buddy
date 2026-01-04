@@ -1,0 +1,53 @@
+.tips-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.tips-mascot {
+  margin-bottom: var(--space-md);
+}
+
+.tips-header h2 {
+  margin: var(--space-md) 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.tip-card {
+  position: relative;
+}
+
+.tip-number {
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-black);
+  color: var(--color-primary-light);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+[data-theme="dark"] .tip-number {
+  color: rgba(122, 139, 122, 0.3);
+}
+
+.tip-title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.tip-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}

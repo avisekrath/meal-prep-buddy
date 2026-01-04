@@ -1,0 +1,67 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.badge-sm {
+  padding: 2px var(--space-sm);
+  font-size: var(--text-xs);
+}
+
+.badge-md {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--text-sm);
+}
+
+.badge-lg {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-base);
+}
+
+/* Variants */
+.badge-default {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+.badge-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.badge-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+}
+
+.badge-light {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.badge-dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: var(--color-text-dark);
+}
+
+/* Dark mode */
+[data-theme="dark"] .badge-default {
+  background-color: #3a3735;
+  color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .badge-light {
+  background-color: rgba(122, 139, 122, 0.2);
+}

@@ -1,0 +1,95 @@
+.proteinref {
+  background-color: #2D2A28;
+  color: #F5F0EB;
+}
+
+.proteinref-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.proteinref-mascot {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.proteinref-header h2 {
+  margin: var(--space-md) 0;
+  color: #F5F0EB;
+}
+
+.proteinref-header .text-large {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.proteinref-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.proteinref-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.proteinref-header-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-md);
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.proteinref-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.proteinref-row:last-child {
+  border-bottom: none;
+}
+
+.proteinref-row:hover {
+  background-color: var(--color-bg-light);
+}
+
+.proteinref-item {
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+}
+
+.proteinref-protein {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+}
+
+.proteinref-protein strong {
+  font-weight: var(--weight-bold);
+}
+
+.proteinref-note {
+  text-align: center;
+  margin-top: var(--space-xl);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* Dark mode */
+[data-theme="dark"] .proteinref-row {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .proteinref-row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}

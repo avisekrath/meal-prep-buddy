@@ -1,0 +1,356 @@
+.mealideas-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.mealideas-mascot {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.mealideas-header h2 {
+  margin: var(--space-md) 0;
+}
+
+.mealideas-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.mealideas-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.mealideas-category-title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-md);
+  color: var(--color-text-dark);
+}
+
+.mealideas-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Motion wrapper for drag */
+.meal-option-wrapper {
+  cursor: grab;
+  touch-action: none;
+}
+
+.meal-option-wrapper:active {
+  cursor: grabbing;
+}
+
+.meal-option-wrapper-selected .meal-option {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.meal-option {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.meal-option:hover {
+  border-color: var(--color-primary-light);
+}
+
+.meal-option-selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.meal-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.meal-option-name {
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+}
+
+.meal-option-check {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: bold;
+}
+
+.meal-option-macros {
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Sidebar */
+.mealideas-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.mealideas-totals {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-light));
+}
+
+.sidebar-title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.sidebar-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-stat {
+  text-align: center;
+}
+
+.sidebar-stat-number {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-black);
+  display: block;
+  line-height: 1;
+}
+
+.sidebar-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sidebar-selected {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-meal {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+}
+
+.sidebar-meal-cat {
+  color: var(--color-text-muted);
+}
+
+.sidebar-meal-name {
+  font-weight: var(--weight-medium);
+  text-align: right;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+/* Dark mode */
+[data-theme="dark"] .mealideas-totals {
+  background: linear-gradient(135deg, rgba(122, 139, 122, 0.3), rgba(196, 169, 160, 0.2));
+}
+
+[data-theme="dark"] .sidebar-stats {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mealideas-layout {
+    grid-template-columns: 1fr;
+    padding-bottom: 60px;
+  }
+
+  .mealideas-sidebar {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: var(--space-xs) var(--space-md);
+    background: var(--color-bg-white);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid var(--color-divider);
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible;
+    touch-action: none;
+  }
+
+  .mealideas-sidebar .sidebar-stat-number {
+    color: var(--color-text-dark) !important;
+  }
+
+  .mealideas-sidebar .sidebar-stat-label {
+    color: var(--color-text-muted) !important;
+  }
+
+  .sidebar-drag-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--color-text-muted);
+    border-radius: 2px;
+    margin: 6px auto 4px;
+    opacity: 0.4;
+  }
+
+  .mealideas-sidebar .card,
+  .mealideas-sidebar .mealideas-totals {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .mealideas-totals {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .sidebar-stats {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--space-md);
+  }
+
+  .sidebar-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+
+  .sidebar-selected {
+    display: none;
+  }
+
+  .sidebar-actions {
+    display: flex;
+    gap: var(--space-xs);
+    margin-left: auto;
+  }
+
+  .sidebar-stat-number {
+    font-size: var(--text-base);
+    font-weight: var(--weight-bold);
+  }
+
+  .sidebar-stat-label {
+    font-size: 10px;
+    text-transform: lowercase;
+  }
+
+  /* Hide button text on mobile, show only icons */
+  .sidebar-actions .btn-text {
+    display: none;
+  }
+
+  .sidebar-actions .btn {
+    padding: var(--space-xs);
+  }
+
+  [data-theme="dark"] .mealideas-sidebar {
+    background: #2C2A28;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="dark"] .mealideas-sidebar .sidebar-stat-number {
+    color: #F5F3EF !important;
+  }
+
+  [data-theme="dark"] .mealideas-sidebar .sidebar-stat-label {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* Fix button contrast in dark mode sidebar */
+  [data-theme="dark"] .mealideas-sidebar .btn-dark {
+    background: #F5F3EF;
+    color: #1A1918;
+  }
+
+  [data-theme="dark"] .mealideas-sidebar .btn-dark:hover {
+    background: #E8E4DE;
+  }
+
+  /* Floating restore button */
+  .sidebar-restore-btn {
+    position: fixed;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    z-index: var(--z-sticky);
+  }
+
+  [data-theme="dark"] .sidebar-restore-btn {
+    background: var(--color-primary);
+  }
+}
+
+@media (max-width: 480px) {
+  .mealideas-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide drag handle and restore button on desktop */
+@media (min-width: 901px) {
+  .sidebar-drag-handle,
+  .sidebar-restore-btn {
+    display: none;
+  }
+}
